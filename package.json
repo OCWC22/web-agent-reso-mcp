@@ -1,0 +1,36 @@
+{
+  "name": "browser-use-mcp-server",
+  "version": "0.2.0",
+  "type": "module",
+  "private": true,
+  "main": "dist/index.js",
+  "bin": {
+    "browser-use-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && shx chmod +x dist/*.js || true",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "start": "node dist/index.js",
+    "start:stdio": "node dist/index.js --stdio",
+    "dev": "tsc && node dist/index.js",
+    "dev:stdio": "tsc && node dist/index.js --stdio"
+  },
+  "dependencies": {
+    "@browser-use/browser-use-node": "npm:@jsr/browser-use__browser-use-node@^0.1.0",
+    "@modelcontextprotocol/sdk": "^1.17.3",
+    "dotenv": "^16.4.5",
+    "openai": "^4.59.0",
+    "ai": "^4.0.34",
+    "@ai-sdk/openai": "^1.1.5",
+    "zod": "^3.23.8",
+    "langchain": "^0.3.2"
+  },
+  "devDependencies": {
+    "shx": "^0.3.4",
+    "typescript": "^5.5.4"
+  }
+}
